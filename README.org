@@ -1,0 +1,20 @@
+# This file is generated automatically from metadata
+# File edits may be overwritten!
+- Project Name: RP2040_minimal
+- Synopsis: 
+- Documentation Version: 1.0.0
+- Pcb Version: 1.0
+- Enclosure Version: 1.0
+- Supplemental BOM Version: 1.0
+- Release Date: 2024-04-24
+- Creation Date: 2024-03-20
+- Kicad Version: 7.0.11
+- License: BSD-3-Clause
+- URL: https://github.com/janelia-kicad/RP2040_minimal
+- Author: Peter Polidoro
+- Email: peter@polidoro.io
+- Copyright: 2024 Howard Hughes Medical Institute
+- References:
+  - [[https://www.raspberrypi.com/products/raspberry-pi-pico/][Raspberry Pi Pico]]
+
+[[./documentation/pcb/raytrace.png]]

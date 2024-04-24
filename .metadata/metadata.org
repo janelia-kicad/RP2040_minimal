@@ -1,0 +1,662 @@
+#+EXPORT_FILE_NAME: ../README
+#+OPTIONS: toc:1 |:t ^:nil tags:nil
+
+# Place warning at the top of the exported file
+#+BEGIN_EXAMPLE
+<!-- This file is generated automatically from metadata -->
+<!-- File edits may be overwritten! -->
+#+END_EXAMPLE
+
+* Project Specific Variables                                       :noexport:
+
+#+NAME: project-name
+#+BEGIN_SRC text :exports none :noweb yes
+RP2040_minimal
+#+END_SRC
+
+#+NAME: repository-name
+#+BEGIN_SRC text :exports none :noweb yes
+RP2040_minimal
+#+END_SRC
+
+#+NAME: documentation-version
+#+BEGIN_SRC text :exports none :noweb yes
+1.0.0
+#+END_SRC
+
+#+NAME: pcb-version
+#+BEGIN_SRC text :exports none :noweb yes
+1.0
+#+END_SRC
+
+#+NAME: enclosure-version
+#+BEGIN_SRC text :exports none :noweb yes
+1.0
+#+END_SRC
+
+#+NAME: supplemental-bom-version
+#+BEGIN_SRC text :exports none :noweb yes
+1.0
+#+END_SRC
+
+#+NAME: synopsis
+#+BEGIN_SRC text :exports none :noweb yes
+#+END_SRC
+
+#+NAME: references
+#+BEGIN_SRC text :exports none :noweb yes
+[[https://www.raspberrypi.com/products/raspberry-pi-pico/][Raspberry Pi Pico]]
+#+END_SRC
+
+#+NAME: creation-date
+#+BEGIN_SRC text :exports none :noweb yes
+2024-03-20
+#+END_SRC
+
+#+NAME: description
+#+BEGIN_SRC text :exports none :noweb yes
+
+#+END_SRC
+
+* General and Derived Variables                                    :noexport:
+
+#+NAME: release-month-day
+#+BEGIN_SRC emacs-lisp :exports none :noweb yes
+(format-time-string "%m-%d")
+#+END_SRC
+
+#+NAME: release-year
+#+BEGIN_SRC emacs-lisp :exports none :noweb yes
+(format-time-string "%Y")
+#+END_SRC
+
+#+NAME: release-date
+#+BEGIN_SRC text :exports none :noweb yes
+<<release-year()>>-<<release-month-day()>>
+#+END_SRC
+
+#+NAME: license
+#+BEGIN_SRC text :exports none :noweb yes
+BSD-3-Clause
+#+END_SRC
+
+#+NAME: guix-license
+#+BEGIN_SRC text :exports none :noweb yes
+license:bsd-3
+#+END_SRC
+
+#+NAME: license-files
+#+BEGIN_SRC text :exports none :noweb yes
+LICENSE
+#+END_SRC
+
+#+NAME: repository-organization
+#+BEGIN_SRC text :exports none :noweb yes
+janelia-kicad
+#+END_SRC
+
+#+NAME: forge
+#+BEGIN_SRC text :exports none :noweb yes
+github.com
+#+END_SRC
+
+#+NAME: repository-url
+#+BEGIN_SRC text :exports none :noweb yes
+https://<<forge>>/<<repository-organization>>/<<repository-name>>
+#+END_SRC
+
+#+NAME: git-clone-url-ssh
+#+BEGIN_SRC text :exports none :noweb yes
+git@<<forge>>:<<repository-organization>>/<<repository-name>>.git
+#+END_SRC
+
+#+NAME: author-given-name
+#+BEGIN_SRC text :exports none :noweb yes
+Peter
+#+END_SRC
+
+#+NAME: author-family-name
+#+BEGIN_SRC text :exports none :noweb yes
+Polidoro
+#+END_SRC
+
+#+NAME: author
+#+BEGIN_SRC text :exports none :noweb yes
+<<author-given-name>> <<author-family-name>>
+#+END_SRC
+
+#+NAME: email
+#+BEGIN_SRC text :exports none :noweb yes
+peter@polidoro.io
+#+END_SRC
+
+#+NAME: affiliation
+#+BEGIN_SRC text :exports none :noweb yes
+Howard Hughes Medical Institute
+#+END_SRC
+
+#+NAME: copyright
+#+BEGIN_SRC text :exports none :noweb yes
+<<release-year()>> <<affiliation>>
+#+END_SRC
+
+#+NAME: kicad-version
+#+BEGIN_SRC text :exports none :noweb yes
+7.0.11
+#+END_SRC
+
+#+NAME: programming-language
+#+BEGIN_SRC text :exports none :noweb yes
+KiCad
+#+END_SRC
+#+NAME: image-width
+#+BEGIN_SRC text :exports none :noweb yes
+1920
+#+END_SRC
+
+#+NAME: metadata-dir
+#+BEGIN_SRC text :exports none :noweb yes
+.metadata
+#+END_SRC
+
+#+NAME: documentation-dir
+#+BEGIN_SRC text :exports none :noweb yes
+documentation
+#+END_SRC
+
+#+NAME: bom-dir
+#+BEGIN_SRC text :exports none :noweb yes
+<<documentation-dir>>/bom
+#+END_SRC
+
+#+NAME: fabrication-dir
+#+BEGIN_SRC text :exports none :noweb yes
+<<documentation-dir>>/fabrication
+#+END_SRC
+
+#+NAME: pcb-dir
+#+BEGIN_SRC text :exports none :noweb yes
+<<documentation-dir>>/pcb
+#+END_SRC
+
+#+NAME: reference-dir
+#+BEGIN_SRC text :exports none :noweb yes
+<<documentation-dir>>/reference
+#+END_SRC
+
+#+NAME: schematic-dir
+#+BEGIN_SRC text :exports none :noweb yes
+<<documentation-dir>>/schematic
+#+END_SRC
+
+#+name: org-hello
+#+begin_src org :var addressee=""
+Hello $addressee
+#+end_src
+
+#+name: print-org
+#+begin_src elisp :var x=org-hello[](addressee="World!")
+  (print x)
+#+end_src
+
+#+name: repository-info
+#+BEGIN_SRC org :noweb yes
+- Project Name: <<project-name>>
+- Synopsis: <<synopsis>>
+- Documentation Version: <<documentation-version>>
+- Pcb Version: <<pcb-version>>
+- Enclosure Version: <<enclosure-version>>
+- Supplemental BOM Version: <<supplemental-bom-version>>
+- Release Date: <<release-date>>
+- Creation Date: <<creation-date>>
+- Kicad Version: <<kicad-version>>
+- License: <<license>>
+- URL: <<repository-url>>
+- Author: <<author>>
+- Email: <<email>>
+- Copyright: <<copyright>>
+- References:
+  - <<references>>
+
+[[./<<pcb-dir>>/raytrace.png]]
+
+<<description>>
+#+END_SRC
+
+# #+html: <img src="./<<pcb-dir>>/raytrace.png" width="<<image-width>>">
+
+#+NAME: supplemental-bom
+#+BEGIN_SRC org :noweb yes
+| Item | Synopsis                                               | Manufacturer Part Number | Manufacturer      | Quantity | Cost  | Total |
+|------+--------------------------------------------------------+--------------------------+-------------------+----------+-------+-------|
+|    1 | FAN BLOWER 17X3MM 3VDC RECT CONN                       | ASB01703HA3-00CAH        | Delta Electronics |        1 | 19.54 | 19.54 |
+|------+--------------------------------------------------------+--------------------------+-------------------+----------+-------+-------|
+|      | Supplemental BOM Version: <<supplemental-bom-version>> |                          |                   |          | Total | 19.54 |
+,#+TBLFM: $7=$5*$6;%0.2f::@>$7=vsum(@2..@-1);%0.2f
+#+END_SRC
+
+* Repository Info
+
+#+call: print-org(x=repository-info[:results raw]()):results raw
+
+* Images
+
+#+BEGIN_SRC python :noweb yes :exports results :results output raw
+from pathlib import Path
+file_path_strings = ['top.png',
+                     'bottom.png',
+                     'front.png',
+                     'back.png',
+                     'left.png',
+                     'right.png']
+for file_path_string in file_path_strings:
+    path = Path('..') / Path('<<pcb-dir>>') / Path(file_path_string)
+    if path.is_file():
+        print(f'#+html: <img src="./<<pcb-dir>>/{path.name}" width="<<image-width>>">\n')
+#+END_SRC
+
+* Schematic
+
+#+BEGIN_SRC python :noweb yes :exports results :results output raw
+from pathlib import Path
+path = Path('..') / Path('<<schematic-dir>>')
+for child in path.iterdir():
+    if '.pdf' in str(child):
+        print(f'[[file:./<<schematic-dir>>/{child.name}][./<<schematic-dir>>/{child.name}]]\n')
+#+END_SRC
+
+#+BEGIN_SRC python :noweb yes :exports results :results output raw
+from pathlib import Path
+from re import search
+from collections import OrderedDict
+path = Path('..') / Path('<<schematic-dir>>')
+svg_dict = {}
+for child in path.iterdir():
+    if '.svg' in str(child):
+        text = child.read_text()
+        # sort by Id inside svg text
+        match_object = search('Id:\s*(\d*)', text)
+        number = int(match_object.groups()[0])
+        svg_dict[number] = f'#+html: <img src="./<<schematic-dir>>/{child.name}" width="<<image-width>>">'
+sorted_svg_dict = OrderedDict(sorted(svg_dict.items()))
+for svg_string in sorted_svg_dict.values():
+    print(f'{svg_string}\n')
+#+END_SRC
+
+* PCB
+
+#+BEGIN_SRC python :noweb yes :exports results :results output raw
+from pathlib import Path
+file_path_strings = ['<<project-name>>-User_Drawings.svg',
+                     '<<project-name>>-F_Silkscreen.svg',
+                     '<<project-name>>-B_Silkscreen.svg',
+                     '<<project-name>>-F_Fab.svg',
+                     '<<project-name>>-B_Fab.svg']
+for file_path_string in file_path_strings:
+    path = Path('..') / Path('<<pcb-dir>>') / Path(file_path_string)
+    if path.is_file():
+        print(f'#+html: <img src="./<<pcb-dir>>/{path.name}" width="<<image-width>>">\n')
+#+END_SRC
+
+* Bill of Materials
+
+** Board
+
+#+NAME: pcb-parts
+#+BEGIN_SRC python :noweb yes :exports results :results value table
+from kicad_bom import KicadBom
+kb = KicadBom('../<<project-name>>/', '../<<bom-dir>>')
+kb.save_all_csv_files()
+column_names = ['Item',
+                'Reference(s)',
+                'Description',
+                'Manufacturer Part Number',
+                'Manufacturer',
+                'Quantity',
+                'Package']
+format_for_org_table = True
+bom = kb.get_bom(column_names, format_for_org_table)
+return bom
+#+END_SRC
+
+** Supplemental
+
+#+call: print-org(x=supplemental-bom[:results raw]()):results raw
+
+* Development
+
+** Install Guix
+
+[[https://guix.gnu.org/manual/en/html_node/Binary-Installation.html][Install Guix]]
+
+** Edit metadata.org
+
+#+BEGIN_EXAMPLE
+make metadata-edits
+#+END_EXAMPLE
+
+** Tangle metadata.org
+
+#+BEGIN_EXAMPLE
+make metadata
+#+END_EXAMPLE
+
+** Edit project
+
+#+BEGIN_EXAMPLE
+make kicad-edits
+exit
+#+END_EXAMPLE
+
+* Tangled Files                                                    :noexport:
+
+#+BEGIN_SRC org :tangle ../README.org :exports none :noweb yes
+# This file is generated automatically from metadata
+# File edits may be overwritten!
+<<repository-info>>
+#+END_SRC
+
+#+BEGIN_SRC scheme :tangle guix/channels.scm :exports none :noweb yes
+;; This file is generated automatically from metadata
+;; File edits may be overwritten!
+(list (channel
+        (name 'guix-janelia)
+        (url "https://github.com/guix-janelia/guix-janelia.git")
+        (branch "main")
+        (commit
+          "08fe0b2ecb68d9e17dfa4802c79935ea6339d6d1"))
+      (channel
+        (name 'guix)
+        (url "https://git.savannah.gnu.org/git/guix.git")
+        (branch "master")
+        (commit
+          "6cb181c07f83dfdeae1882208941086f3717a165")
+        (introduction
+          (make-channel-introduction
+            "9edb3f66fd807b096b48283debdcddccfea34bad"
+            (openpgp-fingerprint
+              "BBB0 2DDF 2CEA F6A8 0D1D  E643 A2A0 6DF2 A33A 54FA")))))
+#+END_SRC
+
+#+BEGIN_SRC scheme :tangle guix/manifest.scm :exports none :noweb yes
+;; This file is generated automatically from .metadata.org
+;; File edits may be overwritten!
+(specifications->manifest
+ '("kicad"
+   "kicad-doc"
+   "kicad-symbols"
+   "kicad-footprints"
+   "kicad-packages3d"
+   "kicad-templates"
+   "make"
+   "bash"
+   "git"
+   "emacs"
+   "emacs-org"
+   "emacs-ox-gfm"
+   "imagemagick"
+   "inkscape"
+   "python"
+   "python-ipython"
+   "python-kicad-bom"
+   "dosbox"
+   "freecad"
+   "font-orbitron"
+   "zip"
+   "pandoc"
+   "texlive-scheme-basic"
+   "texlive-adjustbox"
+   "texlive-booktabs"
+   "texlive-siunitx"
+   "texlive-graphics"
+   "texlive-geometry"
+   "texlive-ulem"))
+#+END_SRC
+
+#+BEGIN_SRC text :tangle ../Makefile :exports none :noweb yes
+# This file is generated automatically from .metadata.org
+# File edits may be overwritten!
+include .metadata/Makefile
+#+END_SRC
+
+#+BEGIN_SRC text :tangle Makefile :exports none :noweb yes
+# This file is generated automatically from .metadata.org
+# File edits may be overwritten!
+
+MAKEFILE_PATH := $(abspath $(lastword $(MAKEFILE_LIST)))
+MAKEFILE_DIR := $(notdir $(patsubst %/,%,$(dir $(MAKEFILE_PATH))))
+MAKEFILE_DIR_ABS := $(dir $(MAKEFILE_PATH))
+KICAD_CONFIG_HOME := $(MAKEFILE_DIR_ABS).config/kicad/
+GUIX-TIME-MACHINE = guix time-machine -C $(MAKEFILE_DIR)/guix/channels.scm
+GUIX-SHELL = $(GUIX-TIME-MACHINE) -- shell -m $(MAKEFILE_DIR)/guix/manifest.scm
+CONTAINER = --container -F -E "^DISPLAY$$" -E "^XAUTHORITY$$" --expose="$$XAUTHORITY" --expose=/tmp/.X11-unix/ --expose=$$HOME/.Xauthority --expose=/etc/machine-id
+GUIX-CONTAINER = $(GUIX-SHELL) $(CONTAINER)
+
+.PHONY: metadata-edits
+metadata-edits:
+	$(GUIX-CONTAINER) -- sh -c "emacs -q --no-site-file --no-site-lisp --no-splash -l $(MAKEFILE_DIR)/emacs/init.el --file $(MAKEFILE_DIR)/metadata.org"
+
+.PHONY: metadata
+metadata:
+	$(GUIX-CONTAINER) -- sh -c "emacs --batch -Q  -l $(MAKEFILE_DIR)/emacs/init.el --eval '(process-org \"$(MAKEFILE_DIR)/metadata.org\")'"
+
+.PHONY: guix-shell
+guix-shell:
+	$(GUIX-SHELL)
+
+.PHONY: guix-container
+guix-container:
+	$(GUIX-CONTAINER)
+
+.PHONY: ipython-shell
+ipython-shell:
+	$(GUIX-CONTAINER) -- ipython
+
+.PHONY: kicad-edits
+kicad-edits:
+	# $(GUIX-CONTAINER) -S /home/$(USER)/.config/kicad/7.0=$(MAKEFILE_DIR)/.config/kicad/7.0 -- kicad
+	# $(GUIX-SHELL) -- kicad
+	KICAD_CONFIG_HOME=$(KICAD_CONFIG_HOME) $(GUIX-SHELL) -E "^KICAD_CONFIG_HOME" -- kicad
+
+.PHONY: freecad-edits
+freecad-edits:
+	$(GUIX-SHELL) -- FreeCAD
+
+.PHONY: filter-edits
+filter-edits:
+	$(GUIX-SHELL) -- sh -c "dosbox documentation/filter/FILTER42.exe"
+
+.PHONY: skip-worktree-config
+skip-worktree-config:
+	git ls-files -z .metadata/.config/ | xargs -0 git update-index --skip-worktree
+
+.PHONY: no-skip-worktree-config
+no-skip-worktree-config:
+	git ls-files -z .metadata/.config/ | xargs -0 git update-index --no-skip-worktree
+
+.PHONY: ls-files-config
+ls-files-config:
+	git ls-files .metadata/.config/ -v
+
+.PHONY: cropped
+cropped:
+	# $(GUIX-SHELL) -- inkscape -D --export-overwrite --export-plain-svg documentation/pcb/*.svg
+	inkscape -D --export-overwrite --export-plain-svg documentation/pcb/*.svg
+
+.PHONY: trimmed-images
+trimmed-images:
+	mogrify -trim documentation/pcb/*.png
+
+.PHONY: zipped-gerbers
+zipped-gerbers:
+	$(GUIX-SHELL) -- sh -c "rm -f documentation/gerbers/*.zip && zip -j -r documentation/gerbers/<<project-name>>-<<pcb-version>>.zip documentation/gerbers"
+#+END_SRC
+
+#+BEGIN_SRC scheme :tangle emacs/init.el :exports none :noweb yes
+;; This file is generated automatically from metadata
+;; File edits may be overwritten!
+(require 'org)
+(require 'ox-org)
+
+(eval-after-load "org"
+  '(require 'ox-gfm nil t))
+
+(setq make-backup-files nil)
+(setq org-confirm-babel-evaluate nil)
+
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((org . t)
+   (emacs-lisp . t)
+   (lisp . t)
+   (shell . t)
+   (python . t)
+   (scheme . t)))
+
+(setq org-babel-python-command "python3")
+
+(setq python-indent-guess-indent-offset t)
+(setq python-indent-guess-indent-offset-verbose nil)
+
+(setq org-edit-src-content-indentation 0
+      org-src-tab-acts-natively t
+      org-src-preserve-indentation t)
+
+(defun tangle-org (org-file)
+  "Tangle org file"
+  (unless (string= "org" (file-name-extension org-file))
+    (error "INFILE must be an org file."))
+  (org-babel-tangle-file org-file))
+
+(defun export-org-to-markdown (org-file)
+  "Export org file to gfm file"
+  (unless (string= "org" (file-name-extension org-file))
+    (error "INFILE must be an org file."))
+  (let ((org-file-buffer (find-file-noselect org-file)))
+    (with-current-buffer org-file-buffer
+      (org-open-file (org-gfm-export-to-markdown)))))
+
+(defun export-org-to-pdf (org-file)
+  "Export org file to pdf file"
+  (unless (string= "org" (file-name-extension org-file))
+    (error "INFILE must be an org file."))
+  (let ((org-file-buffer (find-file-noselect org-file)))
+    (with-current-buffer org-file-buffer
+      (org-open-file (org-latex-export-to-pdf)))))
+
+;; (defun process-org (org-file)
+;;   "Tangle and export org file"
+;;   (progn (tangle-org org-file)
+;;          (export-org-to-markdown org-file)
+;;          (export-org-to-pdf org-file)))
+
+(defun process-org (org-file)
+  "Tangle and export org file"
+  (progn (tangle-org org-file)
+         (export-org-to-markdown org-file)))
+
+(make-variable-buffer-local 'org-export-filter-final-output-functions)
+(defun my-double-blank-line-filter (output backend info)
+  (replace-regexp-in-string "^\n+" "\n" output))
+(add-to-list 'org-export-filter-final-output-functions
+             'my-double-blank-line-filter)
+(defun my-result-keyword-filter (output backend info)
+  (replace-regexp-in-string "^#[+]RESULTS:.*\n" "" output))
+(add-to-list 'org-export-filter-final-output-functions
+             'my-result-keyword-filter)
+(defun my-export-filename-filter (output backend info)
+  (replace-regexp-in-string "^#[+]EXPORT_FILE_NAME:.*\n" "" output))
+(add-to-list 'org-export-filter-final-output-functions
+             'my-export-filename-filter)
+
+(setq enable-local-variables nil)
+(setq tangle-external-files t)
+#+END_SRC
+
+#+RESULTS:
+
+#+HEADER: :tangle (if tangle-external-files "../documentation/bom/supplemental-bom.org" "no")
+#+BEGIN_SRC org :exports none :noweb yes
+,#+OPTIONS: toc:nil title:nil num:nil ^:nil
+,#+LATEX_HEADER: \usepackage{adjustbox}
+,#+LATEX_HEADER: \usepackage[margin=2cm]{geometry}
+,* Supplemental BOM
+- Project Name: <<project-name>>
+- Synopsis: <<synopsis>>
+- Release Date: <<release-date>>
+- URL: <<repository-url>>
+- Author: <<author>>
+- Email: <<email>>
+,#+BEGIN_TABLE
+,#+LATEX: \adjustbox{max width=\linewidth}{
+,#+ATTR_LATEX: :center nil
+<<supplemental-bom>>
+,#+LATEX: }
+,#+END_TABLE
+#+END_SRC
+
+#+HEADER: :tangle (if tangle-external-files "../AUTHORS" "no")
+#+BEGIN_SRC text :exports none :noweb yes
+<<author>>
+#+END_SRC
+
+#+HEADER: :tangle (if tangle-external-files "../codemeta.json" "no")
+#+BEGIN_SRC js :exports none :noweb yes
+{
+    "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+    "@type": "SoftwareSourceCode",
+    "license": "https://spdx.org/licenses/<<license>>",
+    "codeRepository": "<<repository-url>>",
+    "dateCreated": "<<creation-date>>",
+    "dateModified": "<<release-date>>",
+    "name": "<<project-name>>",
+    "version": "<<pcb-version>>",
+    "description": "<<synopsis>>",
+    "programmingLanguage": [
+        "<<programming-language>>"
+    ],
+    "author": [
+        {
+            "@type": "Person",
+            "givenName": "<<author-given-name>>",
+            "familyName": "<<author-family-name>>",
+            "email": "<<email>>",
+            "affiliation": {
+                "@type": "Organization",
+                "name": "<<affiliation>>"
+            }
+        }
+    ]
+}
+#+END_SRC
+
+#+NAME: license-text
+#+BEGIN_SRC text :exports none :noweb yes
+Janelia Open-Source Hardware
+
+By downloading, using and/or viewing these designs, documentation and related data and information, and all content in the foregoing (collectively, the “Designs”), you agree to the following:
+
+You may use, copy, modify, display and distribute the Designs for any non-commercial research or educational purpose.
+
+THE DESIGNS ARE PROTOTYPES AND ARE EXPERIMENTAL IN NATURE AND SHOULD BE USED WITH PRUDENCE AND APPROPRIATE CAUTION, AS NOT ALL OF THE CHARACTERISTICS ARE KNOWN. THE DESIGNS ARE PROVIDED “AS-IS” WITHOUT ANY EXPRESS OR IMPLIED WARRANTIES OF ANY KIND (INCLUDING, BUT NOT LIMITED TO, ANY IMPLIED WARRANTIES OF MERCHANTABILITY, NON-INFRINGEMENT, TITLE, ACCURACY, OR FITNESS FOR A PARTICULAR PURPOSE, AND ANY WARRANTIES ARISING FROM COURSE OF PERFORMANCE, COURSE OF DEALING, COURSE OF CONDUCT, OR USAGE OF TRADE) OR CONDITIONS OF ANY KIND, WHETHER EXPRESS OR IMPLIED OR STATUTORY. NO OPINION, ADVICE OR STATEMENT OF THE HOWARD HUGHES MEDICAL INSTITUTE (“HHMI”) OR ITS TRUSTEES, EMPLOYEES, AGENTS, LICENSORS OR SUPPLIERS, WHETHER MADE WITHIN THE DESIGNS OR OTHERWISE, SHALL CREATE ANY WARRANTY. HHMI MAKES NO WARRANTY THAT THE DESIGNS WILL BE ACCURATE, CURRENT OR RELIABLE. SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OF CERTAIN WARRANTIES OR CONDITIONS, AND AS A CONSEQUENCE SOME OF THE ABOVE DISCLAIMERS MAY NOT APPLY TO YOU.
+
+IN NO EVENT SHALL HHMI OR ITS TRUSTEES, EMPLOYEES, AGENTS, LICENSORS OR SUPPLIERS (THE “HHMI PARTIES”) BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, CONSEQUENTIAL, OR PUNITIVE DAMAGES OR LOSSES OF ANY KIND (INCLUDING, BUT NOT LIMITED TO, ANY PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, BUSINESS, GOODWILL, DATA, REVENUE, OR PROFITS; REASONABLE ROYALTIES; BUSINESS INTERRUPTION; OR OTHER INTANGIBLE LOSSES) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, TORT (INCLUDING, WITHOUT LIMITATION, NEGLIGENCE) OR OTHERWISE, ARISING IN ANY WAY OUT OF THE USE OF, OR INABILITY TO USE, THE DESIGNS, OR FOR ANY OTHER CLAIM RELATED IN ANY WAY TO YOUR USE OF THE DESIGNS OR YOUR INTERACTIONS WITH HHMI, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE OR LOSS, AND NOTWITHSTANDING THE FAILURE OF ESSENTIAL PURPOSE OF ANY LIMITED REMEDY. YOU ACKNOWLEDGE THAT THESE LIMITATIONS ARE REASONABLE, THAT THEY ARE AN ESSENTIAL ELEMENT HEREOF, AND THAT ABSENT SUCH LIMITATIONS, HHMI WOULD NOT MAKE THE DESIGNS AVAILABLE TO YOU OR ENTER INTO THESE TERMS AND CONDITIONS. YOU REMAIN RESPONSIBLE FOR ALL LEGAL COMPLIANCE WITH RESPECT TO YOUR USAGE OF THE DESIGNS. SOME JURISDICTIONS DO NOT ALLOW THE LIMITATION OF LIABILITY FOR INCIDENTAL OR CONSEQUENTIAL DAMAGES, AND AS A CONSEQUENCE SOME OF THE ABOVE LIMITATIONS MAY NOT APPLY TO YOU; IN SUCH JURISDICTIONS, THE LIABILITY OF THE HHMI PARTIES SHALL BE LIMITED TO THE FULLEST EXTENT PERMITTED BY LAW.
+
+Any redistribution of the Designs must contain or reference these terms.
+#+END_SRC
+
+#+BEGIN_SRC text :tangle LICENSE :exports none :noweb yes
+<<license-text>>
+#+END_SRC
+
+#+HEADER: :tangle (if tangle-external-files "../LICENSE" "no")
+#+BEGIN_SRC text :exports none :noweb yes
+<<license-text>>
+#+END_SRC
+
+;; Local Variables:
+;; eval: (setq after-save-hook nil)
+;; eval: (setq org-confirm-babel-evaluate nil)
+;; eval: (setq tangle-external-files nil)
+;; End:
+

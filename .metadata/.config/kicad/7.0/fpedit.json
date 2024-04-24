@@ -1,0 +1,196 @@
+{
+  "appearance": {
+    "color_theme": "_builtin_default"
+  },
+  "aui": {
+    "appearance_panel_tab": 0,
+    "right_panel_width": 486,
+    "show_layer_manager": true
+  },
+  "color_picker": {
+    "default_tab": 0
+  },
+  "cross_probing": {
+    "auto_highlight": true,
+    "center_on_items": true,
+    "on_selection": true,
+    "zoom_to_fit": true
+  },
+  "design_settings": {
+    "copper_line_width": 0.19999999999999998,
+    "copper_text_italic": false,
+    "copper_text_size_h": 1.5,
+    "copper_text_size_v": 1.5,
+    "copper_text_thickness": 0.3,
+    "courtyard_line_width": 0.049999999999999996,
+    "default_footprint_text_items": [
+      [
+        "REF**",
+        true,
+        37
+      ],
+      [
+        "",
+        true,
+        49
+      ],
+      [
+        "${REFERENCE}",
+        true,
+        49
+      ]
+    ],
+    "edge_line_width": 0.049999999999999996,
+    "fab_line_width": 0.09999999999999999,
+    "fab_text_italic": false,
+    "fab_text_size_h": 1.0,
+    "fab_text_size_v": 1.0,
+    "fab_text_thickness": 0.15,
+    "others_line_width": 0.09999999999999999,
+    "others_text_italic": false,
+    "others_text_size_h": 1.0,
+    "others_text_size_v": 1.0,
+    "others_text_thickness": 0.15,
+    "silk_line_width": 0.09999999999999999,
+    "silk_text_italic": false,
+    "silk_text_size_h": 1.0,
+    "silk_text_size_v": 1.0,
+    "silk_text_thickness": 0.09999999999999999
+  },
+  "editing": {
+    "fp_use_45_degree_limit": false,
+    "magnetic_graphics": true,
+    "magnetic_pads": 2,
+    "polar_coords": false,
+    "rotation_angle": 900,
+    "selection_filter": {
+      "dimensions": true,
+      "footprints": true,
+      "graphics": true,
+      "keepouts": true,
+      "lockedItems": false,
+      "otherItems": true,
+      "pads": true,
+      "text": true,
+      "tracks": true,
+      "vias": true,
+      "zones": true
+    }
+  },
+  "find_replace": {
+    "find_history": [],
+    "find_string": "",
+    "match_case": false,
+    "match_mode": 0,
+    "replace_history": [],
+    "replace_string": "",
+    "search_and_replace": false
+  },
+  "graphics": {
+    "canvas_type": 1,
+    "highlight_factor": 0.5,
+    "select_factor": 0.75
+  },
+  "lib_tree": {
+    "column_widths": null,
+    "columns": []
+  },
+  "meta": {
+    "version": 2
+  },
+  "pcb_display": {
+    "active_layer_preset": "",
+    "layer_presets": []
+  },
+  "printing": {
+    "background": false,
+    "color_theme": "",
+    "layers": [],
+    "monochrome": true,
+    "scale": 1.0,
+    "title_block": false,
+    "use_theme": false
+  },
+  "system": {
+    "file_history": [],
+    "first_run_shown": false,
+    "last_imperial_units": 0,
+    "last_import_export_path": "",
+    "last_metric_units": 1,
+    "max_undo_items": 0,
+    "units": 1
+  },
+  "window": {
+    "cursor": {
+      "always_show_cursor": true,
+      "fullscreen_cursor": true
+    },
+    "display": 1,
+    "footprint_text_shown_columns": "0 1 2 3 4 5 6",
+    "grid": {
+      "axes_enabled": true,
+      "fast_grid_1": 4,
+      "fast_grid_2": 5,
+      "last_size": 15,
+      "line_width": 1.0,
+      "min_spacing": 10.0,
+      "show": true,
+      "sizes": [
+        "1000 mil",
+        "500 mil",
+        "250 mil",
+        "200 mil",
+        "100 mil",
+        "50 mil",
+        "25 mil",
+        "20 mil",
+        "10 mil",
+        "5 mil",
+        "2 mil",
+        "1 mil",
+        "5.0 mm",
+        "2.5 mm",
+        "1.0 mm",
+        "0.5 mm",
+        "0.25 mm",
+        "0.2 mm",
+        "0.1 mm",
+        "0.05 mm",
+        "0.025 mm",
+        "0.01 mm"
+      ],
+      "snap": 0,
+      "style": 0,
+      "user_grid_x": "10 mil",
+      "user_grid_y": "10 mil"
+    },
+    "lib_width": 486,
+    "maximized": false,
+    "mru_path": "",
+    "perspective": "layout2|name=InfoBar;caption=;state=131454;dir=1;layer=1;row=0;pos=0;prop=100000;bestw=20;besth=30;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=MainToolbar;caption=;state=139632;dir=1;layer=6;row=0;pos=0;prop=100000;bestw=1331;besth=38;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=MsgPanel;caption=;state=131452;dir=3;layer=6;row=0;pos=0;prop=100000;bestw=390;besth=38;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=Footprints;caption=Libraries;state=2044;dir=4;layer=3;row=0;pos=0;prop=100000;bestw=250;besth=-1;minw=250;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=OptToolbar;caption=;state=139596;dir=4;layer=2;row=0;pos=0;prop=100000;bestw=34;besth=451;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=ToolsToolbar;caption=;state=139596;dir=2;layer=2;row=0;pos=0;prop=100000;bestw=34;besth=547;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=LayersManager;caption=Appearance;state=1276;dir=2;layer=3;row=0;pos=0;prop=100000;bestw=180;besth=-1;minw=250;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=SelectionFilter;caption=Selection Filter;state=1532;dir=2;layer=3;row=0;pos=1;prop=0;bestw=229;besth=148;minw=160;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=DrawFrame;caption=;state=1020;dir=5;layer=0;row=0;pos=0;prop=100000;bestw=390;besth=154;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|dock_size(1,6,0)=38|dock_size(3,6,0)=38|dock_size(4,3,0)=488|dock_size(4,2,0)=34|dock_size(2,2,0)=34|dock_size(2,3,0)=486|dock_size(5,0,0)=392|",
+    "pos_x": 2024,
+    "pos_y": 0,
+    "size_x": 1910,
+    "size_y": 1134,
+    "zoom_factors": [
+      0.13,
+      0.22,
+      0.35,
+      0.6,
+      1.0,
+      1.5,
+      2.2,
+      3.5,
+      5.0,
+      8.0,
+      13.0,
+      20.0,
+      35.0,
+      50.0,
+      80.0,
+      130.0,
+      220.0,
+      300.0
+    ]
+  }
+}
