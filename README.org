@@ -1,7 +1,7 @@
 # This file is generated automatically from metadata
 # File edits may be overwritten!
 - Project Name: RP2040_minimal
-- Synopsis: 
+- Synopsis: This minimal design example is intended to demonstrate how you can get started with your own RP2040 based PCB designs.
 - Documentation Version: 1.0.0
 - Pcb Version: 1.0
 - Enclosure Version: 1.0

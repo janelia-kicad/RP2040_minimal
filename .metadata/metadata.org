@@ -41,6 +41,7 @@ RP2040_minimal
 
 #+NAME: synopsis
 #+BEGIN_SRC text :exports none :noweb yes
+This minimal design example is intended to demonstrate how you can get started with your own RP2040 based PCB designs.
 #+END_SRC
 
 #+NAME: references
@@ -55,7 +56,6 @@ RP2040_minimal
 
 #+NAME: description
 #+BEGIN_SRC text :exports none :noweb yes
-
 #+END_SRC
 
 * General and Derived Variables                                    :noexport:
